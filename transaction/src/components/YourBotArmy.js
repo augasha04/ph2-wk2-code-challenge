@@ -1,5 +1,5 @@
 import React from 'react';
-import so
+import Bot from './Bot';
 const YourBotArmy = ({ army, onReleaseFromArmy, onDischarge }) => {
   const handleReleaseFromArmy = (bot) => {
     onReleaseFromArmy(bot);
