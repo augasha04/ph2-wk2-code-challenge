@@ -1,12 +1,16 @@
 import React from 'react';
 import Bot from './Bot';
+
+
 const YourBotArmy = ({ army, onReleaseFromArmy, onDischarge }) => {
   const handleReleaseFromArmy = (bot) => {
     onReleaseFromArmy(bot);
   };
+
   const handleDischarge = (bot) => {
     onDischarge(bot);
   };
+
   return (
     <div className="your-bot-army">
       <h2>Your Bot Army</h2>
@@ -23,4 +27,5 @@ const YourBotArmy = ({ army, onReleaseFromArmy, onDischarge }) => {
     </div>
   );
 };
+
 export default YourBotArmy;
