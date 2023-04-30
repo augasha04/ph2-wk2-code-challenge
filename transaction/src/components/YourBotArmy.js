@@ -16,7 +16,7 @@ function MyForm(){
         setData(NewData)
         console.log (NewData)
       }
-      fetch("", {
+      fetch("http://localhost:4000", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
