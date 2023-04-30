@@ -40,11 +40,8 @@ function MyForm(){
         <h2>INPUT bot</h2>
 
         {/* <input type = "ID" placeholder ="ID"/> */}
+        
 
-<input type = "DATE" placeholder = "DATE"/>
-<input type = "DESCRIPTION" placeholder ="DESCRIPTION"/>
-<input type = "CATEGORY" placeholder ="CATEGORY"/>
-<input type = "AMOUNT" placeholder ="AMOUNT"/>
 <button type='button'onClick={handleSubmit}>submit</button>
       </form>
     </div>
