@@ -10,7 +10,7 @@ function BotsCollection() {
         // Add useEffect hook
 
         useEffect(() => {
-          fetch("http://localhost:4000")
+          fetch("http://localhost:4000/bots")
             .then((r) => r.json())
             .then((items) => setItems(items));
         }, []);

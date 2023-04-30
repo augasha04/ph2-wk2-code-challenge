@@ -22,7 +22,7 @@ function MyForm(){
         setData(NewData)
         console.log (NewData)
       }
-      fetch("http://localhost:4000", {
+      fetch("http://localhost:4000/bots", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
