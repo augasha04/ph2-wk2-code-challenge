@@ -3,10 +3,16 @@ import React, { useState } from 'react'
 function MyForm(){
 
     const[data,setData]=useState({
-        date:"",
-        description:"",
-        category :"",
-        amount:"",
+        "id": "",
+      "name": "",
+      "health": "",
+      "damage": "",
+      "armor": "",
+      "bot_class": "",
+      "catchphrase": "",
+      "avatar_url": "",
+      "created_at": "",
+      "updated_at": ""
     })
 
     function handleSubmit(e) {
@@ -31,7 +37,7 @@ function MyForm(){
   return (
     <div className='transform'>
         <form>
-        <h2>INPUT FORM</h2>
+        <h2>INPUT bot</h2>
 
         {/* <input type = "ID" placeholder ="ID"/> */}
 
