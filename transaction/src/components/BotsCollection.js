@@ -1,19 +1,28 @@
-// importing useEffect
-import React, { useEffect, useState } from "react";
-
-// ...importing the rest of the data
-
-function BotsCollection() {
-        const [botSelected, setBotSelected] = useState("All");
-        const [items, setItems] = useState([]);
-      
-        // Add useEffect hook
-
-        useEffect(() => {
-          fetch("http://localhost:4000/bots")
-            .then((r) => r.json())
-            .then((items) => setItems(items));
-        }, []);
-}
-
-export default BotsCollection
+import React, { useEffect, useState } from 'react';
+import Bot from './Bot';
+const BotCollection = ({ onAddToArmy }) => {
+  const [bots, setBots] = useState([]);
+  useEffect(() => {
+    const fetchBots = async () => {
+      try {
+        const response = await fetch('http://localhost:4000/bots');
+        const data = await response.json();
+        setBots(data);
+      } catch (error) {
+        console.log('Error fetching bots:', error);
+      }
+    };
+    fetchBots();
+  }, []);
+  return (
+    <div className="bot-collection">
+      <h2>Bot Collection</h2>
+      {bots.map((bot) => (
+        <div key={bot.id} className="bot-card">
+          <Bot bot={bot} onAddToArmy={onAddToArmy} />
+        </div>
+      ))}
+    </div>
+  );
+};
+export default BotCollection;

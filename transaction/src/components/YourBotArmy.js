@@ -1,51 +1,26 @@
-import React, { useState } from 'react'
-
-function MyForm(){
-
-    const[data,setData]=useState({
-        "id": "",
-      "name": "",
-      "health": "",
-      "damage": "",
-      "armor": "",
-      "bot_class": "",
-      "catchphrase": "",
-      "avatar_url": "",
-      "created_at": "",
-      "updated_at": ""
-    })
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        const NewData={...data}
-        NewData[e.target.id]=e.target.value
-        setData(NewData)
-        console.log (NewData)
-      }
-      fetch("http://localhost:4000/bots", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((r) => r.json())
-    .then((data) => console.log(data));
-
-
-
+import React from 'react';
+import so
+const YourBotArmy = ({ army, onReleaseFromArmy, onDischarge }) => {
+  const handleReleaseFromArmy = (bot) => {
+    onReleaseFromArmy(bot);
+  };
+  const handleDischarge = (bot) => {
+    onDischarge(bot);
+  };
   return (
-    <div className='transform'>
-        <form>
-        <h2>INPUT bot</h2>
-
-        {/* <input type = "ID" placeholder ="ID"/> */}
-        
-
-<button type='button'onClick={handleSubmit}>submit</button>
-      </form>
+    <div className="your-bot-army">
+      <h2>Your Bot Army</h2>
+      {army.length === 0 ? <p>No bots enlisted in the army.</p> : null}
+      {army.map((bot) => (
+        <div key={bot.id} className="army-bot">
+          <Bot
+            bot={bot}
+            onReleaseFromArmy={handleReleaseFromArmy}
+            onDischarge={handleDischarge}
+          />
+        </div>
+      ))}
     </div>
-  )
-}
-
-export default MyForm;
+  );
+};
+export default YourBotArmy;
