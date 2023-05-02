@@ -23,6 +23,8 @@ CONTRIBUTING If you would like to contribute to this project, please follow thes
 
 1.Fork this repository. 2.Create a new branch with your changes using 'git checkout -b your-branch-name'. 3.Make your changes and commit them using 'git commit' 4.Push your changes to your fork using 'git push origin your-branch-name'. 5.Submit a pull request to the original repository.
 
+deployed ("https://ph2-wk2-code-challenge-k6gc.vercel.app/")
+
 CREDITS This project was credited by Augustine Mwangi Kariuki.
 
 LICENSE Tis project is licensed under the GNU GENERAL PUBLIC LICENSE
